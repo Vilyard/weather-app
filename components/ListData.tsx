@@ -6,7 +6,8 @@ const style = {
   bgcolor: "background.paper",
   marginLeft: "770px",
 };
-const ListData = (props) => {
+
+const ListData = (props: any) => {
   return (
     <List sx={style} component="nav" aria-label="mailbox folders">
       <ListItem button>
