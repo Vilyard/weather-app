@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Button, Divider, List, ListItem, ListItemText, TextField } from "@mui/material";
 
-const API_KEY = "dcb5148bad46482b3ecd9ed999fa6f32"
 export default function Home() {
   const [cityInp, setCityInp] = useState("");
   const [weatherData, setWeatherData] = useState<any>({});
@@ -15,10 +14,12 @@ export default function Home() {
   async function getWeatherData() {
     try {
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityInp}&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityInp}&appid=${process.env.NEXT_PUBLIC_API_KEY}&units=metric`
       );
+      console.log(res)
       const data = await res.json();
       if (data?.cod === "400") throw data;
+      
       setWeatherData(data);
     } catch (err) {
       console.log(err);
@@ -48,7 +49,7 @@ export default function Home() {
               <ListItemText primary={weatherData.name} secondary="City Name"/>
             </ListItem>
             <ListItem button>
-              <ListItemText primary={weatherData.main.temp} secondary="City Temp" />
+              <ListItemText primary={weatherData.main.temp} secondary="City Temp &#8451;" />
             </ListItem>
             <Divider light />
             <ListItem button>
