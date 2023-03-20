@@ -1,28 +1,42 @@
-body{
+body {
   background-image: url("https://img.freepik.com/free-photo/sky-clouds-background_1127-3837.jpg?w=1380&t=st=1679322777~exp=1679323377~hmac=35f3e1c0e99e15d75748b087548a406a247b21c028480b8173d578b90c162a35");
 }
-.container{
-  display:grid;
+.container {
+  display: grid;
   grid-auto-rows: 3;
   grid-auto-columns: 3;
   grid-gap: 100px;
- 
 }
 
-.input-by-city{
-  grid:1/1;
+.input-by-city {
+  grid: 1/1;
   justify-self: center;
+}
+#standard-basic {
+  color: white;
 }
 
-#btn{
-margin-top: 6px;
+#btn {
+  margin-top: 6px;
 }
 
-.inp-by-numb{
-  grid:2/2;
+.inp-by-numb {
+  grid: 2/2;
   justify-self: center;
 }
-.output{
-  grid:3/3;
+#outlined-number {
+  color: white;
+}
+.output {
+  grid: 3/3;
   justify-self: center;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li{
+  margin-top: 8px;
 }
