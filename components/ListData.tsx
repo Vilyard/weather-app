@@ -1,36 +1,17 @@
 import React from "react";
-import { Divider, List, ListItem, ListItemText } from "@mui/material";
-const style = {
-  width: "100%",
-  maxWidth: 360,
-  bgcolor: "background.paper",
-  marginLeft: "770px",
-};
+
 
 const ListData = (props: any) => {
   return (
-    <List sx={style} component="nav" aria-label="mailbox folders">
-      <ListItem button>
-        <ListItemText primary={props.props.id} secondary="City ID" />
-      </ListItem>
-      <Divider />
-      <ListItem button divider>
-        <ListItemText primary={props.props.name} secondary="City Name" />
-      </ListItem>
-      <ListItem button>
-        <ListItemText
-          primary={props.props.main.temp}
-          secondary="City Temp &#8451;"
-        />
-      </ListItem>
-      <Divider light />
-      <ListItem button>
-        <ListItemText
-          primary={props.props.timezone}
-          secondary="City Timezone"
-        />
-      </ListItem>
-    </List>
+   <ul>
+      <li>{props.props.name}</li>
+        <li>{props.props.sys.country}</li>
+        {/* <li>{props.props.coord.lon}</li>
+        <li>{props.props.coord.lat}</li> */}
+        <li>{props.props.timezone}</li>
+        <li>{props.props.weather[0].main}</li>
+        <li>{props.props.weather[0].description}</li>
+   </ul>
   );
 };
 
