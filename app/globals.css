@@ -6,3 +6,6 @@ body {
 #btn {
   margin-top: 6px;
 }
+#standard-basic, #outlined-number{
+  color: #fff;
+}
