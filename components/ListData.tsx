@@ -10,6 +10,9 @@ const ListData = (props: any) => {
         maxWidth: 360,
         bgcolor: "rgba(0,0,0,0.2)",
         color: "white",
+        boxShadow: 1,
+        borderRadius: 2,
+        p: 2,
       }}
     >
       <List>
