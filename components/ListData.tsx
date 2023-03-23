@@ -1,4 +1,4 @@
-import { Avatar, Divider, List, ListItem, ListItemText } from "@mui/material";
+import { Divider, List, ListItem, ListItemText } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 

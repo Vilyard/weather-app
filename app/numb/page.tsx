@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button, Container, TextField } from "@mui/material";
 import ListData from "../../components/ListData";
 import Box from "@mui/material/Box";
+import { GetLonLat } from "../api/hello/route";
 
 export default function Numb() {
   const [latInp, setLatInp] = useState("");
@@ -10,12 +11,8 @@ export default function Numb() {
   const [numWeatherData, setNumWeatherData] = useState<any>({});
   async function getDatabyLon() {
     try {
-      const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latInp}&lon=${lonInp}&appid=${process.env.NEXT_PUBLIC_API_KEY}&units=metric`
-      );
-      const data = await res.json();
-      if (data?.cod === "400") throw data;
-      setNumWeatherData(data);
+      const res = await GetLonLat(lonInp, latInp);
+      setNumWeatherData(res);
     } catch (err) {
       console.log(err);
     }
